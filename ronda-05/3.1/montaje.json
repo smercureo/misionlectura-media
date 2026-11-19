@@ -1,0 +1,347 @@
+{
+ "duracion": 16.8,
+ "formato": "1080x1920 30 fps",
+ "voz": {
+  "pista": "master_voz.wav",
+  "piezas": {
+   "V1a": [
+    0.0,
+    1.2530612244897958
+   ],
+   "V1b": [
+    1.2,
+    1.5127437641723356
+   ],
+   "V1c": [
+    2.72,
+    2.3039455782312923
+   ],
+   "V2a": [
+    5.0,
+    1.4459410430839001
+   ],
+   "mmm": [
+    6.4,
+    0.6853061224489796
+   ],
+   "a": [
+    7.1,
+    0.33240362811791385
+   ],
+   "ma": [
+    7.6,
+    0.49587301587301585
+   ],
+   "V3": [
+    8.3,
+    1.6841496598639456
+   ],
+   "V4": [
+    10.0,
+    1.5958730158730159
+   ],
+   "V5": [
+    12.1,
+    1.8965986394557823
+   ],
+   "V6": [
+    13.9,
+    2.2784126984126982
+   ]
+  }
+ },
+ "sfx": [
+  {
+   "t": 1.2,
+   "efecto": "whoosh",
+   "que": "cortes de plano",
+   "db_vs_voz": -12
+  },
+  {
+   "t": 2.85,
+   "efecto": "whoosh",
+   "que": "cortes de plano",
+   "db_vs_voz": -12
+  },
+  {
+   "t": 5.0,
+   "efecto": "whoosh",
+   "que": "cortes de plano",
+   "db_vs_voz": -12
+  },
+  {
+   "t": 10.0,
+   "efecto": "whoosh",
+   "que": "cortes de plano",
+   "db_vs_voz": -12
+  },
+  {
+   "t": 12.1,
+   "efecto": "whoosh",
+   "que": "cortes de plano",
+   "db_vs_voz": -12
+  },
+  {
+   "t": 13.9,
+   "efecto": "whoosh",
+   "que": "cortes de plano",
+   "db_vs_voz": -12
+  },
+  {
+   "t": 15.0,
+   "efecto": "swish",
+   "que": "punch-in 100->118 %",
+   "db_vs_voz": -12
+  },
+  {
+   "t": 2.25,
+   "efecto": "pop",
+   "que": "tarjeta M entra",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 3.7,
+   "efecto": "pop",
+   "que": "MAMÁ",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 4.4,
+   "efecto": "pop",
+   "que": "MESA",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 5.5,
+   "efecto": "pop",
+   "que": "M coral sobre la tarjeta",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 6.4,
+   "efecto": "vib",
+   "que": "vibración bajo el «mmm» (0,7 s)",
+   "db_vs_voz": -12
+  },
+  {
+   "t": 7.1,
+   "efecto": "click",
+   "que": "tarjeta A",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 7.65,
+   "efecto": "tin",
+   "que": "¡tin! fusión MA",
+   "db_vs_voz": -10
+  },
+  {
+   "t": 7.65,
+   "efecto": "confeti",
+   "que": "confeti de la fusión MA",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 8.4,
+   "efecto": "click",
+   "que": "entra la portada del método",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 11.1,
+   "efecto": "tic",
+   "que": "portada de bonus",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 11.35,
+   "efecto": "tic",
+   "que": "portada de bonus",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 11.6,
+   "efecto": "tic",
+   "que": "portada de bonus",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 11.85,
+   "efecto": "tic",
+   "que": "portada de bonus",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 12.3,
+   "efecto": "tic",
+   "que": "hito Sonido",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 13.2,
+   "efecto": "tic",
+   "que": "hito Sílabas",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 14.9,
+   "efecto": "ping",
+   "que": "entra la flecha ↓ (único del CTA)",
+   "db_vs_voz": -12
+  }
+ ],
+ "eventos_sfx_plan": 22,
+ "musica": {
+  "tipo": "marimba ligera sintetizada (numpy, 104 bpm, Do-Sol-Lam-Fa)",
+  "nivel_db_vs_voz": -18,
+  "ducking_db": -6,
+  "ducking_desde": 6.4,
+  "ducking_hasta": 8.3,
+  "cola_16_1_a_16_8": "musica baja sola, fundido de salida en los ultimos 0,2 s"
+ },
+ "video": {
+  "archivo": "3.1_9x16.mp4",
+  "clips_higgsfield": {
+   "CLIP1": "imagen I2 + audio clip1 (5 s)",
+   "CLIP2": "imagen I3 + audio clip2",
+   "CLIP3": "imagen I4 + audio clip3"
+  },
+  "modelo": "seedance_2_0_mini 720p 5 s (reescalado local a 1080x1920)"
+ },
+ "escenas": [
+  {
+   "t": [
+    0.0,
+    1.2
+   ],
+   "clip": 1,
+   "clip_t0": 0.0,
+   "zoom": [
+    1.0,
+    1.06
+   ]
+  },
+  {
+   "t": [
+    1.2,
+    2.85
+   ],
+   "clip": 1,
+   "clip_t0": 1.2,
+   "zoom": [
+    1.1,
+    1.18
+   ]
+  },
+  {
+   "t": [
+    2.85,
+    3.85
+   ],
+   "clip": 1,
+   "clip_t0": 2.85,
+   "zoom": [
+    1.0,
+    1.05
+   ]
+  },
+  {
+   "t": [
+    3.85,
+    5.0
+   ],
+   "clip": 1,
+   "clip_t0": 3.85,
+   "zoom": [
+    1.08,
+    1.12
+   ]
+  },
+  {
+   "t": [
+    5.0,
+    6.4
+   ],
+   "clip": 2,
+   "clip_t0": 0.0,
+   "zoom": [
+    1.0,
+    1.04
+   ]
+  },
+  {
+   "t": [
+    6.4,
+    7.1
+   ],
+   "clip": 2,
+   "clip_t0": 1.4,
+   "zoom": [
+    1.04,
+    1.12
+   ]
+  },
+  {
+   "t": [
+    8.3,
+    10.0
+   ],
+   "clip": 2,
+   "clip_t0": 3.3,
+   "zoom": [
+    1.0,
+    1.06
+   ]
+  },
+  {
+   "t": [
+    10.0,
+    12.1
+   ],
+   "clip": 3,
+   "clip_t0": 0.0,
+   "zoom": [
+    1.0,
+    1.05
+   ]
+  },
+  {
+   "t": [
+    13.9,
+    15.0
+   ],
+   "clip": 3,
+   "clip_t0": 2.1,
+   "zoom": [
+    1.0,
+    1.05
+   ]
+  },
+  {
+   "t": [
+    15.0,
+    16.8
+   ],
+   "clip": 3,
+   "clip_t0": 3.2,
+   "zoom": [
+    1.18,
+    1.2
+   ]
+  }
+ ],
+ "insertos_locales": {
+  "tarjeta_M": "2.25-3.2",
+  "MAMA_MESA": "3.7-5.0 / 4.4-5.0",
+  "M_tracking_4_puntos": "5.5-7.1 (esquinas por fotograma clave cada 0,3 s)",
+  "onda_mmm": "6.4-7.1",
+  "tarjeta_A": "7.1-7.6",
+  "fusion_MA": "7.6-8.3",
+  "portada_metodo": "8.4-10.0 (x 565-1035, y 275-415)",
+  "tira_bonus": "11.1-12.1 (y 1275-1440)",
+  "ruta": "12.1-13.9",
+  "flecha": "14.9-fin (y 1255-1365)",
+  "texto_plano": "15.55-fin (y 1405-1475)"
+ },
+ "subtitulos": "23 unidades, la mas corta 0,30 s; y centro 1150 (1400 entre 5,0 y 7,1 para no tapar la tarjeta)"
+}
