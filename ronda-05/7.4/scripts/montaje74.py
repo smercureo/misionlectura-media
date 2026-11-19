@@ -23,6 +23,18 @@ def zz(t, a, b, z0, z1, e=True):
     x = prog(t, a, b); return lerp(z0, z1, ease(x) if e else x)
 def crema(): 
     img = Image.new("RGBA", (W, H), CREAM + (255,)); return img
+COV = "/home/user/oficina-anuncios/assets/producto/portadas/"
+def cover_method(w):
+    im = Image.open(COV + "p0.png").convert("RGB")
+    d = ImageDraw.Draw(im); bg = im.getpixel((345, 112))
+    d.ellipse((309, 115, 327, 130), fill=im.getpixel((300, 118)))          # confeti que tapa la tilde
+    d.polygon([(334, 130), (342, 117), (350, 117), (342, 130)], fill=(35, 28, 74))   # tilde de MISIÓN
+    im = im.crop((0, 100, 640, 318)); k = w / 640; im = im.resize((w, int(im.height * k)), Image.LANCZOS)
+    out = Image.new("RGBA", (im.width + 24, im.height + 24), (0, 0, 0, 0)); dd = ImageDraw.Draw(out)
+    dd.rounded_rectangle((16, 20, im.width + 16, im.height + 20), 22, fill=(0, 0, 0, 90))
+    m = Image.new("L", im.size, 0); ImageDraw.Draw(m).rounded_rectangle((0, 0, im.width - 1, im.height - 1), 20, fill=255)
+    out.paste(im, (8, 8), m); dd.rounded_rectangle((8, 8, im.width + 8, im.height + 8), 20, outline=(255, 255, 255, 255), width=6)
+    return out
 # ---- tracking de la tarjeta en CLIP 4 (px del clip 720x1280): t_clip -> TL,TR,BR,BL
 KF = [(0.0, [(236, 592), (482, 586), (484, 762), (238, 764)]), (0.4, [(236, 576), (484, 574), (486, 746), (238, 752)]),
       (0.7, [(236, 572), (484, 570), (486, 744), (238, 746)]), (1.0, [(234, 574), (484, 568), (488, 744), (236, 748)])]
@@ -45,17 +57,17 @@ S1 = 1150; SB = 1432
 SUBS = [
  (0.96, 1.80, [("ENSEÑAR A LEER", WHITE)], S1, 104), (1.80, 2.50, [("EN CASA", YEL)], S1, 104),
  (2.50, 3.10, [("¿POR DÓNDE", WHITE)], S1, 104), (3.10, 3.70, [("EMPEZAR?", WHITE)], S1, 104),
- (3.70, 4.50, [("LAS LETRAS", WHITE)], S1, 104), (4.50, 5.30, [("SE APRENDEN", YEL)], S1, 104),
+ (3.70, 4.50, [("LAS LETRAS", WHITE)], 1250, 104), (4.50, 5.30, [("SE APRENDEN", YEL)], 1250, 104),
  (5.30, 6.20, [("PERO JUNTARLAS", WHITE)], 1400, 100), (6.20, 6.78, [("EN SÍLABAS", WHITE)], 1400, 100),
- (6.78, 7.30, [("NO ES", WHITE)], S1, 104), (7.30, 8.10, [("TAN", WHITE), ("FÁCIL", YEL)], S1, 104),
+ (6.78, 7.30, [("NO ES", WHITE)], 1300, 104), (7.30, 8.10, [("TAN", WHITE), ("FÁCIL", YEL)], 1300, 104),
  (8.10, 8.90, [("POR ESO EXISTE", WHITE)], SB, 90), (8.90, 9.96, [("MISIÓN LECTURA", YEL)], SB, 90),
  (9.96, 10.70, [("EL MÉTODO", WHITE)], SB, 90), (10.70, 11.40, [("PARA ENSEÑAR", WHITE)], SB, 90),
  (11.40, 11.85, [("A LEER", WHITE)], SB, 90), (11.85, 12.30, [("EN CASA", YEL)], SB, 90),
  (12.30, 13.40, [("DEL SONIDO", WHITE)], S1, 104), (13.40, 14.15, [("A LAS SÍLABAS", WHITE)], S1, 104),
  (14.15, 14.97, [("MMM", YEL)], 1340, 120), (14.97, 15.45, [("A", YEL)], S1, 120),
  (16.20, 16.90, [("PASO A PASO", WHITE)], 1350, 104), (16.90, 17.60, [("CON JUEGOS", WHITE)], 1350, 104), (17.60, 18.50, [("CORTOS", YEL)], 1350, 104),
- (18.50, 19.05, [("¡Y ESO NO", WHITE)], S1, 104), (19.05, 19.60, [("ES TODO!", YEL)], S1, 104),
- (19.60, 20.60, [("INCLUYE CUATRO", WHITE)], 1130, 96), (20.60, 21.30, [("BONUS", YEL)], 1130, 96), (21.30, 22.18, [("PARA PRACTICAR", WHITE)], 1130, 96),
+ (18.50, 19.05, [("¡Y ESO NO", WHITE)], 1300, 104), (19.05, 19.60, [("ES TODO!", YEL)], 1300, 104),
+ (19.60, 20.60, [("INCLUYE CUATRO", WHITE)], 395, 96), (20.60, 21.30, [("BONUS", YEL)], 395, 96), (21.30, 22.18, [("PARA PRACTICAR", WHITE)], 395, 96),
  (22.18, 22.55, [("TOCA", WHITE)], S1, 104),
  (23.65, 24.20, [("Y MÍRALO", WHITE)], S1, 104), (24.20, 24.90, [("COMPLETO", YEL)], S1, 104),
 ]
@@ -71,16 +83,16 @@ def render(t, with_bg=True):
     elif t < 5.30: img = still("I1", zz(t, 3.7, 5.3, 1.00, 1.10), 0.5, 0.5)
     elif t < 6.78: img = crema()
     elif t < 8.10: img = still("I1", zz(t, 6.78, 8.1, 1.12, 1.20), 0.5, 0.36)
-    elif t < 9.96: img = still("I5", zz(t, 8.1, 9.96, 1.00, 1.04), 0.5, 0.5)
-    elif t < 11.40: img = still("I5", zz(t, 10.5, 11.4, 1.00, 1.12), 0.5, lerp(0.5, 0.58, ease(prog(t, 10.5, 11.4))))
-    elif t < 12.30: img = still("I5", lerp(1.10, 1.03, ease(prog(t, 11.4, 12.3))), lerp(0.36, 0.5, ease(prog(t, 11.4, 12.3))), 0.55)
+    elif t < 9.96: img = still("I5", zz(t, 8.1, 9.96, 1.00, 1.05), 0.5, 0.5)
+    elif t < 11.40: img = still("I5", lerp(1.12, 1.16, ease(prog(t, 10.5, 11.4))), lerp(0.5, 0.44, ease(prog(t, 10.5, 11.4))), 0.52)
+    elif t < 12.30: img = still("I5", lerp(1.04, 1.00, ease(prog(t, 11.4, 12.3))), 0.55, 0.5)
     elif t < 14.15: img = crema()
     elif t < 14.97: img, box = clipf(4, t - 14.15, 1.0)
     elif t < 15.45: img = Image.new("RGBA", (W, H), (30, 60, 120, 255))
     elif t < 16.20: img = Image.new("RGBA", (W, H), (255, 244, 220, 255))
     elif t < 18.50: img, box = clipf(4, t - 14.15, zz(t, 17.0, 18.0, 1.00, 1.12), 0.5, 0.45)
     elif t < 19.60: img, box = clipf(5, t - 18.5, zz(t, 18.5, 19.6, 1.00, 1.06), 0.5, 0.40)
-    elif t < 22.18: img, box = clipf(5, t - 18.5, zz(t, 19.6, 22.18, 1.00, 1.10), 0.5, 0.5)
+    elif t < 22.18: img, box = clipf(5, t - 18.5, zz(t, 19.6, 22.18, 1.00, 1.07), 0.5, 0.5)
     elif t < 23.65: img, box = clipf(1, 3.95, zz(t, 22.18, 23.65, 1.00, 1.06), 0.5, 0.5)
     else: img, box = clipf(1, 3.95, zz(t, 23.65, 25.5, 1.12, 1.20, False), 0.5, 0.45)
     d = ImageDraw.Draw(lay)
@@ -92,7 +104,7 @@ def render(t, with_bg=True):
             t0 = 4.2 + 0.15 * j
             if t < t0: continue
             x = prog(t, t0, t0 + 0.18); k = pop_scale(x) * 0.42
-            paste_c(lay, scaled(letter_card(L, col), k), 150 + j * 155, 1330 + lerp(-160, 0, ease(x)), alpha=min(1, x * 3))
+            paste_c(lay, scaled(letter_card(L, col), k), 150 + j * 155, 1400 + lerp(-160, 0, ease(x)), alpha=min(1, x * 3))
     if 5.30 <= t < 6.78:
         x = ease(prog(t, 5.3, 6.2)); 
         if t < 6.2:
@@ -101,20 +113,20 @@ def render(t, with_bg=True):
             b = ease(prog(t, 6.2, 6.5)); bounce = math.sin(math.pi * min(1, (t - 6.2) / 0.5))
             paste_c(lay, scaled(CARD_M, 0.95), 380 - 220 * b, 800 - 80 * bounce, rot=-12 * b); paste_c(lay, scaled(CARD_A, 0.95), 700 + 220 * b, 800 - 80 * bounce, rot=12 * b)
     if 8.90 <= t < 10.50:   # portada del metodo: arriba a la izquierda, capa fija sin zoom, solo titulo
-        a = min(prog(t, 8.9, 9.0), 1 - prog(t, 10.4, 10.5)); c = cover_strip(0, 312)
-        paste_c(lay, c, 64 + c.width / 2, 300 + c.height / 2 + 30, alpha=a)
+        a = min(prog(t, 8.9, 9.0), 1 - prog(t, 10.4, 10.5)); c = cover_method(312)
+        paste_c(lay, c, 64 + c.width / 2, 305 + c.height / 2, alpha=a)
     if 12.30 <= t < 14.15:
         img = crema(); a = ease(prog(t, 12.3, 12.55))
         text_c(lay, "Del sonido", 560, 118, NAVY, 0, PX, alpha=int(255 * a)); text_c(lay, "a las sílabas", 700, 118, NAVY, 0, PX, alpha=int(255 * a))
         y = 850; x1, x2 = 300, 780
         d.rounded_rectangle((x1 - 8, y - 8, x2 + 8, y + 8), 8, fill=(220, 210, 190, 255))
-        pl = ease(prog(t, 12.65, 13.42)); d.rounded_rectangle((x1 - 8, y - 8, lerp(x1, x2, pl) + 8, y + 8), 8, fill=CORAL + (255,))
-        for xx, lab, t0, col in ((x1, "Sonido", 12.65, CORAL), (x2, "Sílabas", 13.42, BLUE)):
+        pl = ease(prog(t, 12.65, 13.45)); d.rounded_rectangle((x1 - 8, y - 8, lerp(x1, x2, pl) + 8, y + 8), 8, fill=CORAL + (255,))
+        for xx, lab, t0, col in ((x1, "Sonido", 12.65, CORAL), (x2, "Sílabas", 13.45, BLUE)):
             on = t >= t0; k = 1.0 + (0.25 * math.sin(math.pi * prog(t, t0, t0 + 0.3)) if on else 0)
             r = int(52 * k); d.ellipse((xx - r, y - r, xx + r, y + r), fill=(col if on else (225, 218, 200)) + (255,), outline=NAVY + (255,), width=8)
             text_c(lay, lab, y + 115, 66, NAVY, 0, PB, cx=xx)
     if 14.15 <= t < 14.97 and box:
-        cc = tracked_M(lay, t, box); rings(lay, cc, t, 14.2, 14.97, CORAL, n=3, maxr=300)
+        cc = tracked_M(lay, t, box)
     if 14.97 <= t < 15.45:
         g = ImageDraw.Draw(img)
         for y in range(0, H, 8): g.rectangle((0, y, W, y + 8), fill=(int(lerp(40, 22, y / H)), int(lerp(90, 50, y / H)), int(lerp(170, 120, y / H)), 255))
@@ -135,11 +147,14 @@ def render(t, with_bg=True):
             text_c(lay, "¡MA!", 1150, 200, YEL, 12, PX)
         confetti(lay, t, 15.55, W // 2, 820)
     if 20.18 <= t < 22.18:
+        cs = {i: cover_strip(i, 400) for i in (1, 2, 3, 4)}
+        r1 = max(cs[1].height, cs[2].height); r2 = max(cs[3].height, cs[4].height); y0 = 1490 - (r1 + r2 + 8)
+        pos = {1: (270, y0 + r1 / 2), 2: (810, y0 + r1 / 2), 3: (270, y0 + r1 + 8 + r2 / 2), 4: (810, y0 + r1 + 8 + r2 / 2)}
         for j, i in enumerate((1, 2, 3, 4)):
             t0 = 20.18 + 0.27 * j
             if t < t0: continue
-            x = ease(prog(t, t0, t0 + 0.2)); c = cover_strip(i, 255); cx = 190 + j * 233; cy = 1345 + (j % 2) * 14
-            paste_c(lay, c, cx, cy + lerp(90, 0, x), rot=(-9, -3, 3, 9)[j], alpha=x)
+            x = ease(prog(t, t0, t0 + 0.2)); cx, cy = pos[i]
+            paste_c(lay, cs[i], cx, cy + lerp(60, 0, x), rot=(-2, 2, 2, -2)[j], alpha=x)
     # ---- subtitulos y CTA
     s = sub_at(t)
     if s: sub_words(lay, s[0], s[1], s[2])

@@ -34,7 +34,7 @@ for t in (0.96,2.50,10.50,11.40,17.00,19.60,23.65): ev.append((t,"swish","punch-
 for t in (4.2,4.35,4.5,4.65,4.8,4.95): ev.append((t,"pop","cae tarjeta M·A·P·S·L·T",-16))
 ev.append((6.20,"click","toc: M y A chocan",-16)); ev.append((6.50,"swish","boing: rebote",-16))
 ev.append((8.90,"click","entra la portada del método",-16))
-for t,w in ((12.65,"hito Sonido"),(13.42,"hito Sílabas")): ev.append((t,"tic",w,-16))
+for t,w in ((12.65,"hito Sonido"),(13.45,"hito Sílabas")): ev.append((t,"tic",w,-16))
 ev.append((14.20,"vib","vibración bajo el «mmm» (0,7 s)",-12))
 ev.append((14.97,"click","tarjeta A",-16))
 ev.append((15.55,"tin","¡tin! fusión MA",-10)); ev.append((15.55,"confeti","confeti de la fusión MA",-16))
