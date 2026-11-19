@@ -1,0 +1,241 @@
+{
+ "duracion": 25.62,
+ "formato": "1080x1920 30 fps",
+ "voz": {
+  "pista": "voz/voz_maestra.wav",
+  "toma": "t3 + variante d2 del demo (ElevenLabs eleven_v3, Daniela)"
+ },
+ "sfx": [
+  {
+   "t": 0.0,
+   "efecto": "ding",
+   "que": "campanita doble ¡Atención!",
+   "db_vs_voz": -12
+  },
+  {
+   "t": 3.7,
+   "efecto": "whoosh",
+   "que": "cortes de plano mayor",
+   "db_vs_voz": -12
+  },
+  {
+   "t": 5.3,
+   "efecto": "whoosh",
+   "que": "cortes de plano mayor",
+   "db_vs_voz": -12
+  },
+  {
+   "t": 6.78,
+   "efecto": "whoosh",
+   "que": "cortes de plano mayor",
+   "db_vs_voz": -12
+  },
+  {
+   "t": 8.1,
+   "efecto": "whoosh",
+   "que": "cortes de plano mayor",
+   "db_vs_voz": -12
+  },
+  {
+   "t": 12.3,
+   "efecto": "whoosh",
+   "que": "cortes de plano mayor",
+   "db_vs_voz": -12
+  },
+  {
+   "t": 14.15,
+   "efecto": "whoosh",
+   "que": "cortes de plano mayor",
+   "db_vs_voz": -12
+  },
+  {
+   "t": 16.2,
+   "efecto": "whoosh",
+   "que": "cortes de plano mayor",
+   "db_vs_voz": -12
+  },
+  {
+   "t": 18.5,
+   "efecto": "whoosh",
+   "que": "cortes de plano mayor",
+   "db_vs_voz": -12
+  },
+  {
+   "t": 22.18,
+   "efecto": "whoosh",
+   "que": "cortes de plano mayor",
+   "db_vs_voz": -12
+  },
+  {
+   "t": 0.96,
+   "efecto": "swish",
+   "que": "punch-in / cambio de encuadre",
+   "db_vs_voz": -12
+  },
+  {
+   "t": 2.5,
+   "efecto": "swish",
+   "que": "punch-in / cambio de encuadre",
+   "db_vs_voz": -12
+  },
+  {
+   "t": 10.5,
+   "efecto": "swish",
+   "que": "punch-in / cambio de encuadre",
+   "db_vs_voz": -12
+  },
+  {
+   "t": 11.4,
+   "efecto": "swish",
+   "que": "punch-in / cambio de encuadre",
+   "db_vs_voz": -12
+  },
+  {
+   "t": 17.0,
+   "efecto": "swish",
+   "que": "punch-in / cambio de encuadre",
+   "db_vs_voz": -12
+  },
+  {
+   "t": 19.6,
+   "efecto": "swish",
+   "que": "punch-in / cambio de encuadre",
+   "db_vs_voz": -12
+  },
+  {
+   "t": 23.65,
+   "efecto": "swish",
+   "que": "punch-in / cambio de encuadre",
+   "db_vs_voz": -12
+  },
+  {
+   "t": 4.2,
+   "efecto": "pop",
+   "que": "cae tarjeta M·A·P·S·L·T",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 4.35,
+   "efecto": "pop",
+   "que": "cae tarjeta M·A·P·S·L·T",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 4.5,
+   "efecto": "pop",
+   "que": "cae tarjeta M·A·P·S·L·T",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 4.65,
+   "efecto": "pop",
+   "que": "cae tarjeta M·A·P·S·L·T",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 4.8,
+   "efecto": "pop",
+   "que": "cae tarjeta M·A·P·S·L·T",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 4.95,
+   "efecto": "pop",
+   "que": "cae tarjeta M·A·P·S·L·T",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 6.2,
+   "efecto": "click",
+   "que": "toc: M y A chocan",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 6.5,
+   "efecto": "swish",
+   "que": "boing: rebote",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 8.9,
+   "efecto": "click",
+   "que": "entra la portada del método",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 12.65,
+   "efecto": "tic",
+   "que": "hito Sonido",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 13.42,
+   "efecto": "tic",
+   "que": "hito Sílabas",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 14.2,
+   "efecto": "vib",
+   "que": "vibración bajo el «mmm» (0,7 s)",
+   "db_vs_voz": -12
+  },
+  {
+   "t": 14.97,
+   "efecto": "click",
+   "que": "tarjeta A",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 15.55,
+   "efecto": "tin",
+   "que": "¡tin! fusión MA",
+   "db_vs_voz": -10
+  },
+  {
+   "t": 15.55,
+   "efecto": "confeti",
+   "que": "confeti de la fusión MA",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 20.18,
+   "efecto": "tic",
+   "que": "portada de bonus",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 20.45,
+   "efecto": "tic",
+   "que": "portada de bonus",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 20.72,
+   "efecto": "tic",
+   "que": "portada de bonus",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 20.99,
+   "efecto": "tic",
+   "que": "portada de bonus",
+   "db_vs_voz": -16
+  },
+  {
+   "t": 22.28,
+   "efecto": "ping",
+   "que": "entra la flecha ↓ (único del CTA)",
+   "db_vs_voz": -12
+  }
+ ],
+ "eventos_sfx_plan": 36,
+ "musica": {
+  "tipo": "ukelele calido sintetizado (Karplus-Strong, 100 bpm, Do-Sol-Lam-Fa)",
+  "nivel_db_vs_voz": -18,
+  "ducking_db": -6,
+  "ducking_desde": 14.15,
+  "ducking_hasta": 16.2,
+  "cola_24_77_a_25_62": "musica baja sola, fundido de salida 0,2 s"
+ }
+}
